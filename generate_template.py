@@ -12,8 +12,8 @@ def check_deps():
     try:
         import openpyxl
     except ImportError:
-        print("正在安装 openpyxl...")
-        os.system(f"{sys.executable} -m pip install openpyxl -q")
+        print("缺少依赖 openpyxl，请先安装：python3 -m pip install openpyxl")
+        sys.exit(1)
 
 
 def generate_template(output_path="product_template.xlsx"):
