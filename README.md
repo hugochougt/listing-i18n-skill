@@ -31,13 +31,11 @@ npx clawhub install listing-i18n
 
 ## 使用
 
-### 1. 生成产品模板
+### 1. 获取产品模板
 
-```bash
-python3 generate_template.py
-```
+直接下载仓库中的 [`product_template.xlsx`](./product_template.xlsx)，包含 Products 和 Instructions 两个 sheet。
 
-生成 `product_template.xlsx`，包含 Products 和 Instructions 两个 sheet。
+在 OpenClaw 对话中，也可以直接告诉 AI「我没有产品文件」，AI 会自动生成模板。
 
 ### 2. 翻译产品
 
