@@ -1,7 +1,7 @@
 ---
 name: listing-i18n
 description: 将中文产品 Excel 翻译为多语言 Amazon/Shopify Listing。当用户需要把中文产品信息翻译成多语言 Listing 时使用。适用于「翻译产品」「多语言Listing」「产品本地化」「Amazon listing」「Shopify listing」「translate listing」「localize products」等场景。
-version: 2.0.0
+version: 0.1.0
 metadata:
   openclaw:
     emoji: "🌐"
