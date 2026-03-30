@@ -38,3 +38,38 @@ product_template.xlsx    # 预生成的模板文件
 
 - 修改 SKILL.md 中的 workflow 或输出格式时，同步更新 `validate.py` 和 `build_output.py`
 - generate_template.py 的字段顺序必须与 SKILL.md 中定义的列结构一致
+- 如果改动影响 skill 对外行为、说明文档、脚本能力或版本号，完成后要同步发布到 GitHub 和 ClawHub
+
+## 发布流程
+
+发布前检查：
+
+- 确认 `SKILL.md` 里的 `version` 已更新
+- 确认需要发布的改动已提交到 git
+- 如有必要，先推送到 GitHub
+
+GitHub：
+
+```bash
+gh repo view --web
+gh auth status
+git push origin main
+```
+
+优先级：
+
+- GitHub 相关操作优先使用 `gh`
+- 代码推送本身仍可使用 `git push origin main`
+- 如果后续涉及 PR、release、workflow、issue 等 GitHub 动作，默认先考虑 `gh`
+
+ClawHub：
+
+```bash
+npx clawhub@latest whoami
+npx clawhub@latest publish . --slug listing-i18n --name "Listing I18n" --version <SKILL.md中的version> --changelog "<简短变更说明>" --tags latest
+```
+
+注意：
+
+- 当前可用的 ClawHub CLI 发布命令是顶层 `publish`
+- 不要使用过时的 `clawhub skill publish`
